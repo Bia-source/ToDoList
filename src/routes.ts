@@ -8,4 +8,4 @@ routes.post('/tarefas', listaController.criarTarefa);
 routes.delete('/tarefas/:id', listaController.deletarTarefa);
 routes.put('/tarefas/:id', listaController.editarTarefa);
 
-module.exports = routes
+export default routes ;

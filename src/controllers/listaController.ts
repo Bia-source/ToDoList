@@ -15,12 +15,11 @@ class listaController {
     }
 
     public async buscarPorId(req: Request, res: Response) {
-        const parametro = req.params;
         try {
-            const tarefa = await lista.findById(req.params);
+            const tarefa = await lista.findById(req.params.id);
             return res.json(tarefa);
         } catch (error) {
-            res.json({ mensagem: `Erro ao buscar ${parametro}` });
+            res.json({ mensagem: `Erro ao buscar tarefa`});
         }
 
     }
@@ -37,7 +36,7 @@ class listaController {
 
     public async editarTarefa(req: Request, res: Response) {
         try {
-            const tarefa = await lista.findByIdAndUpdate({ id_: req.params }, req.body, { new: true });
+            const tarefa = await lista.findByIdAndUpdate({_id: req.params.id}, req.body, { new: true });
             return res.json({ tarefa, mensagem: 'Tarefa editada' });
         } catch (error) {
             return res.json({ mensagem: 'Não foi possível editar esta tarefa' });
@@ -47,7 +46,7 @@ class listaController {
 
     public async deletarTarefa(req: Request, res: Response) {
         try {
-            const tarefa = await lista.findOneAndDelete({ _id: req.params });
+            const tarefa = await lista.findOneAndDelete({_id: req.params.id});
             return res.json({ tarefa, mensagem: 'Tarefa deletada' });
         } catch (error) {
            return res.json({mensagem: 'tarefa deletada com sucesso '});
