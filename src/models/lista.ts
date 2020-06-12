@@ -1,4 +1,5 @@
-import {Schema, model, Document} from 'mongoose';
+import mongoose ,{Schema, model, Document} from 'mongoose';
+import { mongoosePagination } from "ts-mongoose-pagination";
 
 interface Lista extends Document{
     descricao:string
