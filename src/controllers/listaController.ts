@@ -2,7 +2,6 @@ import { Request, Response } from 'express';
 import lista from '../models/lista';
 
 
-
 class listaController {
 
     public async buscarTodos(req: Request, res: Response) {
