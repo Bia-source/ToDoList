@@ -1,9 +1,9 @@
 import mongoose from 'mongoose';
 
-export default async function connection(){
+ async function connection(){
 
     try {
-        mongoose.connect(process.env.APP_BD, {
+        mongoose.connect('mongodb+srv://dbToDo:admin@apitodo-stsbj.mongodb.net/<dbname>?retryWrites=true&w=majority', {
             useNewUrlParser: true,
             useUnifiedTopology: true            
         })
@@ -11,3 +11,4 @@ export default async function connection(){
         console.log('Não foi possivel conectar');
     }
 }
+export default connection;
