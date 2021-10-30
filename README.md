@@ -21,6 +21,9 @@ Um CRUD simples para trabalhar com lista de tarefas, conectando com o banco mong
 ### Comandos: 
 - yarn install
 - yarn dev || yarn start
+
+## Porta utilizada
+http://localhost:3001/tarefas{router}
  
 # Autora
 Beatriz Ferreira dos Santos  
